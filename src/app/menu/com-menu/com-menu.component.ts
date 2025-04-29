@@ -12,7 +12,7 @@ export class ComMenuComponent {
   gameList = gamesList;
 
   constructor(private router: Router){}
-    goToGame(gameId: number): void{
-      this.router.navigate(['/game', gameId]);
+    goToGame(gameURL: String): void{
+      this.router.navigate([`/games/${gameURL}`]);
     }
 }

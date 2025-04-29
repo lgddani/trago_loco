@@ -1,6 +1,7 @@
 export const gamesList: Game[] = [
     {
         id: 1,
+        url: 'biela-rusa',
         img: "assets/img/menu/menu-1.jpg",
         alt: "Trago Loco - biela rusa - juegos",
         title: "Biela Rusa",
@@ -8,6 +9,7 @@ export const gamesList: Game[] = [
     },
     {
         id: 2,
+        url: 'verdad-reto-shot',
         img: "assets/img/menu/menu-2.jpg",
         alt: "Trago Loco - verdad/reto o shot - juegos",
         title: "Verdad/Reto o Shot",
@@ -15,6 +17,7 @@ export const gamesList: Game[] = [
     },
     {
         id: 3,
+        url: 'yo-nunca-nunca',
         img: "assets/img/menu/menu-3.jpg",
         alt: "Trago Loco - yo nunca nunca - juegos",
         title: "Yo nunca nunca",
@@ -22,6 +25,7 @@ export const gamesList: Game[] = [
     },
     {
         id: 4,
+        url: 'mi-barquito-de-papel',
         img: "assets/img/menu/menu-4.jpg",
         alt: "Trago Loco - mi barquito de papel - juegos",
         title: "Mi barquito de papel",
@@ -29,6 +33,7 @@ export const gamesList: Game[] = [
     },
     {
         id: 5,
+        url: 'quien-es-mas-probable',
         img: "assets/img/menu/menu-5.jpg",
         alt: "Trago Loco - quien es más probable - juegos",
         title: "Quién es más probable",
@@ -38,6 +43,7 @@ export const gamesList: Game[] = [
 
 export interface Game {
     id: number;
+    url: String,
     img: String;
     alt: String;
     title: String;
