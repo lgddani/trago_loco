@@ -1,1 +1,56 @@
-<p>com-biela-rusa works!</p>
+<div class="container">
+  <div class="background"></div>
+    <button class="instrucciones" title="Instrucciones" (click)="mostrarInstrucciones()">
+      <i class="fa-solid fa-circle-info"></i>
+    </button>
+    <h1 class="titulo">¡LA BIELA RUSA 🍻!</h1>
+    <p class="subtitulo">
+      Prueba tu suerte 
+      <br>
+      Gira la ruleta, si sales disparado te tocará beber lo acordado 😈
+    </p>
+    <br><br>
+    <div class="ruleta-container">
+      <div class="ruleta" #ruleta>
+        <div class="sector" id="item1"><h3>?</h3></div>
+        <div class="sector" id="item2"><h3>?</h3></div>
+        <div class="sector" id="item3"><h3>?</h3></div>
+        <div class="sector" id="item4"><h3>?</h3></div>
+        <div class="sector" id="item5"><h3>?</h3></div>
+        <div class="sector" id="item6"><h3>?</h3></div>
+      </div>
+      <div class="puntero" style="font-family:Chewy;" (mousedown)="girarRuleta()" #puntero>GIRAR</div>
+      <div class="flecha"></div>
+    </div>
+    
+    <!-- Modal Resultado -->
+    <div id="modal" class="modal" [ngClass]="resultadoClase" [style.display]="mostrarModal ? 'block' : 'none'">
+      <div class="modal-content">
+        <div class="modal-header" *ngIf="mostrarModal">{{ resultadoTitulo }}</div>
+        <span class="close" (click)="cerrarModal()">&times;</span>
+        <img id="modal-image" [src]="imagenResultado" alt="Resultado de la ruleta" 
+             [@fadeIn]="mostrarModal ? 'visible' : 'hidden'">
+        <div class="resultado-texto" *ngIf="mostrarModal">
+          <span class="emoji">{{ resultadoEmoji }}</span>{{ resultadoMensaje }}
+        </div>
+      </div>
+    </div>
+    
+    <!-- Modal Instrucciones -->
+    <div id="modal2" class="modal2" [style.display]="mostrarInstruccionesModal ? 'block' : 'none'">
+      <div class="modal-content2">
+        <span class="close-btn" (click)="cerrarInstrucciones()">&times;</span>
+        <div id="instruction-text" [innerHTML]="textoInstruccion"></div>
+        <button id="next-btn" class="btn-sig modal-btn2" 
+                [style.display]="esPasoFinal ? 'none' : 'inline-block'" 
+                (click)="siguienteInstruccion()">Siguiente</button>
+        <button id="close-btn" class="btn-ent modal-btn2" 
+                [style.display]="esPasoFinal ? 'inline-block' : 'none'" 
+                (click)="cerrarInstrucciones()">Entendido</button>
+      </div>
+    </div>
+  </div>
+  
+<video muted autoplay loop class="video-fondo-games">
+    <source src="assets/img/fondo-space.mp4" type="video/mp4">
+</video>
